@@ -27,6 +27,7 @@
 		<PackageReference Include="System.Threading.Channels" Version="5.0.0" />
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\Skymu\Skymu.csproj" />
 		<ProjectReference Include="..\..\Yggdrasil\Yggdrasil.csproj">
 			<Private>False</Private>
 		</ProjectReference>

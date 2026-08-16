@@ -22,6 +22,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
+using Skymu.Captcha;
 using OmegaAOL.Bifrost.WebSockets;
 
 namespace Discord.Networking
@@ -374,6 +375,11 @@ namespace Discord.Networking
 
             var encJson = JsonObject.Parse(encToken);
             string discordEncTkn = encJson["encrypted_token"]?.GetValue<string>();
+            if (discordEncTkn == null)
+            {
+                Skymu.Captcha.HCaptcha.ShowPrompt(encJson["captcha_sitekey"].GetValue<string>(), encJson["captcha_rqdata"].GetValue<string>());
+                return;
+            };
             string discordToken = DecryptRSA(discordEncTkn);
 
             TokenRecieved?.Invoke(this, discordToken);

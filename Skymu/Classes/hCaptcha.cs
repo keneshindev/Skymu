@@ -20,7 +20,7 @@ using Skymu.Preferences;
 
 namespace Skymu.Captcha
 {
-    class HCaptcha
+    public class HCaptcha
     {
         private const string CaptchaHtml =
             @"
@@ -36,6 +36,10 @@ namespace Skymu.Captcha
         background-color: transparent;
     }
   </style>
+  <script src='https://cdn.jsdelivr.net/npm/eruda'></script>
+  <script>
+    eruda.init()
+  </script>
   <script>
   function hcaptchaOnLoad() {
     hcaptcha.render('captcha-container', {

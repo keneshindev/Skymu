@@ -179,13 +179,14 @@ namespace Discord.Networking
 
         internal async Task SendPayload(string payload = null)
         {
+            Debug.WriteLine("SENT: " + payload);
             if (WSClient?.State != WebSocketState.Open) return;
 
             if (payload == null)
             {
                 await WSClient.SendAsync(_identifyBuffer, WebSocketMessageType.Text, true, CancellationToken.None);
                 return;
-            }
+            }   
 
             var byteCount = Encoding.UTF8.GetByteCount(payload);
             byte[] buffer = ArrayPool<byte>.Shared.Rent(byteCount);
@@ -298,7 +299,7 @@ namespace Discord.Networking
         {
             try
             {
-                //Debug.WriteLine("[WS-RESPONSE] " + data);
+                Debug.WriteLine("[WS-RESPONSE] " + data);
                 var json = JsonNode.Parse(data);
                 int opCode = json["op"]?.GetValue<int>() ?? -1;
 

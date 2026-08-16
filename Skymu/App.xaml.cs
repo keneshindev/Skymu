@@ -48,7 +48,7 @@ namespace Skymu
         // Build information
         // -----------------------------------------------------------------------------
 
-        public const string NAME = "Skymu";
+        public const string NAME = "Skymer awa"; // i don't know if i'm required to change this but i will
         public const string BUILD_VERSION = "0.4.7";
         public const string BUILD_NAME = "Elgon Hazelnut Mousse";
 
