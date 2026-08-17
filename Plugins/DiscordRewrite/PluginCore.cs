@@ -25,7 +25,7 @@ namespace DiscordRewrite
         public event EventHandler<CallBottle> CallStateChangedTube;
 
         // Plugin information
-        public string Name { get { return "Discord"; } }
+        public string Name { get { return "Discord Rewrite"; } }
         public string InternalName { get { return "discord-rewrite"; } }
         public bool SupportsServers { get { return true; } }
 
