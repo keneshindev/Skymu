@@ -313,7 +313,7 @@ namespace Discord.Networking
                             case "READY":
                                 // Only uncomment this if you need to debug the READY event from Discord.
                                 // Debug.WriteLine(json["d"]?.ToJsonString());
-                                StatusManager.HandleUserStatus(json["d"]);
+                                StatusManager.HandleUserStatus(_core, json["d"]);
 
                                 var readyData = json["d"];
 
@@ -346,7 +346,7 @@ namespace Discord.Networking
                                 Debug.WriteLine($"[WebSocket] USER_SETTINGS_UPDATE received: {json["d"]?.ToJsonString()}");
                                 break;
                             case "PRESENCE_UPDATE":
-                                StatusManager.HandleUserStatus(json["d"]);
+                                StatusManager.HandleUserStatus(_core, json["d"]);
                                 break;
                             case "VOICE_STATE_UPDATE":
                                 HandleVoiceStateUpdate(json["d"]);
@@ -379,7 +379,7 @@ namespace Discord.Networking
         {
             if (messageData == null) return;
 
-            var messageItem = await MessageParser.ParseMessage(messageData);
+            var messageItem = await MessageParser.ParseMessage(_core, messageData);
             if (messageItem == null) return;
 
             string channelId = messageData["channel_id"]?.GetValue<string>() ?? "0";
@@ -402,7 +402,7 @@ namespace Discord.Networking
         private async Task HandleMessageUpdate(JsonNode messageData) // omega
         {
             if (messageData == null) return;
-            var messageItem = await MessageParser.ParseMessage(messageData);
+            var messageItem = await MessageParser.ParseMessage(_core, messageData);
             if (messageItem == null) return;
             string channelId = messageData["channel_id"]?.GetValue<string>() ?? "0";
             var args = new HelperClasses.DiscordMessageReceivedEventArgs
@@ -493,7 +493,7 @@ namespace Discord.Networking
             {
                 string globalName = await HelperMethods.ReplaceIDWithNameForTyping(userId, DscToken);
 
-                var typingUser = UserStore.GetOrCreate(userId, globalName, globalName);
+                var typingUser = UserStore.GetOrCreate(_core, userId, globalName, globalName);
 
                 _core?._uiContext?.Post(_ =>
                 {
