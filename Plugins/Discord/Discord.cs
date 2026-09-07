@@ -1156,7 +1156,7 @@ namespace Discord
                 return null;
             }
             else Debug.WriteLine("[CALL-INIT] Discord responded with CALL_UPDATE and the call has been established.");
-            //var voiceEvent = await call_picked_up.Task;
+            var voiceEvent = await call_picked_up.Task;
             Debug.WriteLine("[CALL-INIT] Call initialization complete. Returning the active call.");
             return new ActiveCall(voiceEvent.SessionId, convo_id, is_video_call, new User[0]);
         }

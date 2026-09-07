@@ -2522,6 +2522,31 @@
             </Grid>
         </Grid>
     </Grid>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo>
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfo Description="Play!" Click="ThumbButtonInfo_Click">
+                    <ThumbButtonInfo.ImageSource>
+                        <CroppedBitmap SourceRect="32,0,16,16">
+                            <CroppedBitmap.Source>
+                                <BitmapSource>pack://application:,,,Skymu/Icons/skype-online.ico</BitmapSource>
+                            </CroppedBitmap.Source>
+                        </CroppedBitmap>
+                    </ThumbButtonInfo.ImageSource>
+                </ThumbButtonInfo>
+
+                <ThumbButtonInfo Description="Play!" Click="ThumbButtonInfo_Click">
+                    <ThumbButtonInfo.ImageSource>
+                        <CroppedBitmap SourceRect="48,0,16,16">
+                            <CroppedBitmap.Source>
+                                <BitmapSource>pack://application:,,,Skymu/Icons/skype-online.ico</BitmapSource>
+                            </CroppedBitmap.Source>
+                        </CroppedBitmap>
+                    </ThumbButtonInfo.ImageSource>
+                </ThumbButtonInfo>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
 </Window>
 
 
