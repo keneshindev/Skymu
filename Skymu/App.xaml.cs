@@ -40,6 +40,8 @@ using Yggdrasil.Enumerations;
 using Yggdrasil.Bottles;
 using OmegaAOL.Bifrost.Http;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Windows.Media;
 
 namespace Skymu
 {
@@ -50,7 +52,7 @@ namespace Skymu
         // Build information
         // -----------------------------------------------------------------------------
 
-        public const string NAME = "Skymu"; // i don't know if i'm required to change this but i will
+        public const string NAME = "Skymu";
         public const string BUILD_VERSION = "0.4.7";
         public const string BUILD_NAME = "Elgon Hazelnut Mousse";
 
@@ -284,6 +286,11 @@ namespace Skymu
                 case "Skype7":
                     return new Skype7.Login(switchUser, addAccount, accountAdded);
                 case "Skype6":
+                    // TODO: Make a better fix
+                    // Override Settings.ActiveTab on default colorway with the proper color (#0095cc)
+                    Application.Current.Resources["Settings.ActiveTab"] = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0095cc"));
+                    // Override Settings.ActiveTabText to white
+                    Application.Current.Resources["Settings.ActiveTabText"] = new SolidColorBrush(Colors.White);
                     return new Skype6.Login(switchUser, addAccount, accountAdded);
                 case "Skype4":
                     return new Skype4.Login(switchUser, addAccount, accountAdded);

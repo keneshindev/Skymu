@@ -1,8 +1,9 @@
 /*==========================================================*/
-// Copyright © OmegaAOL and EAZY BLACK.
+// Bifrost copyright © OmegaAOL and EAZY BLACK, 2025-2026.
+// For any inquiries, email hackersword666@gmail.com.
 /*==========================================================*/
-// License: https://spdx.org/licenses/AGPL-3.0-or-later
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// License: https://www.apache.org/licenses/LICENSE-2.0
+// SPDX-License-Identifier: Apache-2.0
 /*==========================================================*/
 // BifrostTLS owns raw socket creation and the Bouncy Castle
 // TLS handshake. Both BifrostEngine and BifrostWebSocket

@@ -1,14 +1,10 @@
-﻿/*==========================================================*/
-// Copyright © The Skymu Team and other contributors.
-// For any inquiries or concerns, email contact@skymu.app.
 /*==========================================================*/
-// Modification or redistribution of this code is governed
-// by the terms set out in the project license agreement.
-// If you do not comply with those terms, you may not
-// modify or distribute any original code from the project.
 /*==========================================================*/
-// License: https://skymu.app/legal/license
-// SPDX-License-Identifier: AGPL-3.0-or-later
+// Yggdrasil API copyright © OmegaAOL 2025-2026.
+// For any inquiries, email hackersword666@gmail.com.
+/*==========================================================*/
+// License: https://www.apache.org/licenses/LICENSE-2.0
+// SPDX-License-Identifier: Apache-2.0
 /*==========================================================*/
 
 using System;
@@ -560,7 +556,7 @@ namespace Yggdrasil.Models
     {
         public string title { get; set; }
         public string description { get; set; }
-        public Action onRun { get; set;  }
+        public Action onRun { get; set; }
 
         public ExtraConfiguration(
             string title,
