@@ -13,6 +13,7 @@
 
 using Discord.Helpers;
 using System;
+using System.Diagnostics;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
@@ -51,6 +52,7 @@ namespace Discord.Networking.Managers
 
         public static async Task SendPayload(string payload)
         {
+            Debug.WriteLine(payload);
             if (Socket == null) return;
             await Socket.SendPayload(payload);
         }

@@ -95,7 +95,7 @@ namespace Discord.Networking
         private int _pendingEpochProtoVersion = 1;
         private byte[] _pendingExternalSender = null;
 
-        public CallSocket(string endpoint, string token, string session, string userId, string channelId, bool start_muted)
+        public CallSocket(string endpoint, string token, string session, string serverId, string userId, string channelId, bool start_muted)
         {
             _isMuted = start_muted;
             _selfUserId = userId;
@@ -109,7 +109,7 @@ namespace Discord.Networking
                 op = 0,
                 d = new
                 {
-                    server_id = channelId,
+                    server_id = serverId,
                     channel_id = channelId,
                     user_id = userId,
                     session_id = session,
@@ -242,6 +242,7 @@ namespace Discord.Networking
                             }
 
                             string message = Encoding.UTF8.GetString(data);
+                            Debug.WriteLine(message);
                             HandleMessage(message);
                         }
                     }

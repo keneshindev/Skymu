@@ -1640,6 +1640,11 @@ namespace Skymu.Skype5
 
         #endregion
 
+        private void ThumbButtonInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show((sender as System.Windows.Shell.ThumbButtonInfo).Description);
+        }
+
         private void RefreshExtras()
         {
             ExtrasMenu.Items.Clear();
